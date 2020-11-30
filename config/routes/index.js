@@ -5,6 +5,8 @@ const boardController = require('../../controllers/boardController');
 /* GET home page. */
 router.post('/create', boardController.create);
 
-router.get('/find', boardController.find);
+router.get('/list', boardController.listBoards);
+
+router.get('/find/:boardId', boardController.find);
 
 module.exports = router;

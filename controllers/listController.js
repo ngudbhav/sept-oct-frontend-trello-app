@@ -9,12 +9,13 @@ listController.create = (req, res, next) => {
                 board_id: new mongoose.mongo.ObjectId(req.body.boardId),
                 name: req.body.name
             }, (error, result) => {
+                if (error) throw error;
                 res.json(result);
             }
         );
     }
     else {
-        throw new Error('Board Id and Board name is required to create a list');
+        res.sendStatus(422);
     }
 };
 

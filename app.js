@@ -17,9 +17,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', indexRouter);
-app.use('/list/', listRouter);
-app.use('/task/', taskRouter);
+app.use('/api/boards/', indexRouter);
+app.use('/api/lists/', listRouter);
+app.use('/api/tasks/', taskRouter);
 
 let port = process.env.PORT || 5000;
 
